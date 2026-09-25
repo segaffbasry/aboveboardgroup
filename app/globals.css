@@ -139,7 +139,7 @@ a.more:hover .arrow, .tip:hover .more .arrow { transform: translateX(4px); }
 .photo { position: relative; display: block; overflow: hidden; background: var(--base); border-radius: var(--r-img); }
 .photo img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--dur-reveal) var(--ease-reveal); }
 .photo-contain { background: var(--white); }
-.photo-contain img { object-fit: contain; padding: 12%; }
+.photo-contain img { object-fit: contain; padding: 14% 22%; }
 a:hover .photo img, a:focus-visible .photo img { transform: scale(1.05); }
 
 /* Logo parts: the mark keeps the logo's own amber and blue, the wordmark follows the text colour. */
@@ -163,8 +163,8 @@ html[data-htone="navy"] { --hfg: var(--white); }
 html[data-htone="base"], html[data-htone="white"] { --hfg: var(--navy); }
 .site-header.is-hidden { transform: translateY(-110%); }
 html.is-loading .site-header { opacity: 0; }
-/* The header logo appears when the preloader's mark lands on it. */
-html.is-loading .site-header .brand, html[data-intro="done"]:not([data-logo]) .site-header .brand { visibility: hidden; }
+/* The header's mark appears when the preloader's mark lands on it; its wordmark fades in with the header. */
+html.is-loading .site-header .brand [data-set="mark"], html[data-intro="done"]:not([data-logo]) .site-header .brand [data-set="mark"] { visibility: hidden; }
 .header-row { display: flex; align-items: center; gap: 28px; padding: 14px var(--gutter); }
 .brand { width: clamp(150px, 14vw, 196px); flex: none; }
 .nav { display: flex; align-items: center; gap: 4px; margin-left: auto; font-size: 15px; font-weight: 500; }
@@ -318,6 +318,7 @@ html[data-htone="navy"] .menu-toggle span { background: var(--navy); }
 .tabs button { padding: 10px 18px; border-radius: 50px; font-size: 15px; font-weight: 600; color: var(--muted); transition: background-color var(--dur-appear) var(--ease-appear), color var(--dur-appear) var(--ease-appear); }
 .tabs button[aria-selected="true"] { background: var(--navy); color: var(--white); }
 .rows { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; }
+.rows[hidden] { display: none; }
 .rows a { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 16px; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--line); }
 .rows h3 { font-size: 17px; font-weight: 600; line-height: 1.4; }
 .rows p { grid-column: 1; font-size: 14px; color: var(--muted); line-height: 1.5; }
@@ -367,12 +368,13 @@ html[data-htone="navy"] .menu-toggle span { background: var(--navy); }
 .initial { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--navy); color: var(--white); font-weight: 600; }
 .feed { margin-top: clamp(56px, 7vw, 96px); }
 .feed-head { margin-bottom: 28px; }
-.posts { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: var(--gap); }
+.posts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gap); }
 .post { display: flex; flex-direction: column; gap: 16px; height: 100%; padding: 26px; border-radius: var(--r-card); }
 .post-who { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; gap: 12px; align-items: center; font-size: 14px; line-height: 1.35; }
 .post-who .avatar { width: 44px; height: 44px; border-radius: 50%; }
 .post-who .avatar img { object-position: 50% 15%; }
-.post-who > span:nth-child(2) { display: grid; }
+.post-who > span:nth-child(2) { display: grid; min-width: 0; }
+.post-role { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .post-who > span:nth-child(2) span { color: var(--muted); font-size: 13px; }
 .post-in { color: var(--navy); }
 .post-text { font-size: 15px; white-space: pre-line; display: -webkit-box; -webkit-line-clamp: 8; -webkit-box-orient: vertical; overflow: hidden; }
@@ -435,7 +437,7 @@ html[data-htone="navy"] .menu-toggle span { background: var(--navy); }
   .nav { display: none; }
   .menu-toggle { display: grid; }
   .header-end { margin-left: auto; }
-  .steps, .trust-grid, .guide-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .steps, .trust-grid, .guide-grid, .posts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 960px) {
   .hero { height: auto; min-height: 100svh; }
@@ -454,7 +456,7 @@ html[data-htone="navy"] .menu-toggle span { background: var(--navy); }
 @media (max-width: 720px) {
   .header-call { display: none; }
   .header-row { padding-block: 12px; }
-  .rows, .choose-grid, .menu-links, .steps, .trust-grid, .guide-grid, .footer-mid { grid-template-columns: minmax(0, 1fr); }
+  .rows, .choose-grid, .menu-links, .steps, .trust-grid, .guide-grid, .posts, .footer-mid { grid-template-columns: minmax(0, 1fr); }
   .service-card { grid-template-columns: minmax(0, 1fr); }
   .service-card .photo { aspect-ratio: 16 / 10; }
   .team-grid { grid-template-columns: minmax(0, 1fr); gap: var(--gap); }
@@ -466,4 +468,11 @@ html[data-htone="navy"] .menu-toggle span { background: var(--navy); }
   .hero-frame .photo { position: relative; inset: auto; aspect-ratio: 4 / 3; }
   .methods > div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
   .qa details p { padding-right: 0; }
+}
+
+/* Reduced motion: no smooth scroll, preloader, reveals or marquee (handled in JS and above); the remaining CSS
+   movement (disclosure height, photo zoom, arrow turns) is switched off too. Colour changes stay. */
+@media (prefers-reduced-motion: reduce) {
+  .qa details::details-content, .photo img, .btn-disc .arrow, .chip-disc .arrow, .site-header, .more .arrow { transition: none; }
+  a:hover .photo img, a:focus-visible .photo img { transform: none; }
 }

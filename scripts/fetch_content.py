@@ -76,9 +76,9 @@ tips = to_json(array("title:`Consider Heat Pump Technology`"))
 reviews = to_json(array("name:`Hannah Claire`"))
 posts = to_json(array("text:`100% fill rate."))
 
-# The homepage feed: company posts about the work, from the two directors. Personal posts, reposts of other
+# The homepage feed: company posts about the work, two from each director. Personal posts, reposts of other
 # companies' hiring ads and posts carrying personal mobile numbers are left out.
-keep = ("100% fill rate", "First full month", "A client rang me Friday", "We placed an engineer", "This week we’ve started", "We turned down a 70 FCU")
+keep = ("100% fill rate", "First full month", "A client rang me Friday", "This week we’ve started")
 posts = [p for p in posts if p["text"].startswith(keep) and not p.get("isRepost")]
 
 os.makedirs(os.path.join(ROOT, "public", "images"), exist_ok=True)

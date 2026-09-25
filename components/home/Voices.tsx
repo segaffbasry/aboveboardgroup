@@ -40,7 +40,7 @@ export default function Voices() {
             <a className="card post" href={linkedin.href} target="_blank" rel="noopener noreferrer">
               <span className="post-who">
                 <Photo src={avatars[post.profileId].src} width={avatars[post.profileId].width} height={avatars[post.profileId].height} className="avatar" />
-                <span><b>{post.author}</b><span>{post.title.split(" | ")[0]}</span></span>
+                <span><b>{post.author}</b><span className="post-role">{post.title}</span></span>
                 <span className="post-in"><Social icon="linkedin" size={16} /></span>
               </span>
               <span className="post-text">{post.text}</span>

@@ -41,15 +41,21 @@ export default function Loader() {
     const markSet = el.querySelector<SVGGElement>('[data-set="mark"]')!;
     const wordSet = el.querySelector<SVGGElement>('[data-set="word"]')!;
 
-    // Where the mark has to land: the mark inside the header logo. GSAP moves an SVG group in viewBox units, so the
-    // screen distance is divided by the loader logo's px-per-unit.
+    // Where the mark has to land: the mark inside the header logo. Its own box is measured once, before any tween
+    // moves a part; the target is re-measured every frame, so the flight follows the header if it shifts while the
+    // page settles. GSAP moves an SVG group in viewBox units, so screen px are divided by the logo's px-per-unit.
     const svg = el.querySelector<SVGSVGElement>("svg")!;
-    const flyTo = () => {
+    const from = markSet.getBoundingClientRect();
+    const fly = { p: 0 };
+    const land = () => {
       const target = document.querySelector<SVGGElement>('.site-header .brand [data-set="mark"]');
       const unit = svg.getBoundingClientRect().width / svg.viewBox.baseVal.width;
-      if (!target) return { x: 0, y: -40 / unit, scale: .6 };
-      const from = markSet.getBoundingClientRect(), to = target.getBoundingClientRect();
-      return { x: (to.left + to.width / 2 - (from.left + from.width / 2)) / unit, y: (to.top + to.height / 2 - (from.top + from.height / 2)) / unit, scale: to.width / from.width };
+      const box = target?.getBoundingClientRect();
+      const to = box && box.width > 0 && from.width > 0 ? box : undefined; // a hidden header or loader has no box to fly to
+      const x = to ? (to.left + to.width / 2 - (from.left + from.width / 2)) / unit : 0;
+      const y = to ? (to.top + to.height / 2 - (from.top + from.height / 2)) / unit : -40 / unit;
+      const scale = to ? to.width / from.width : .6;
+      gsap.set(markSet, { x: x * fly.p, y: y * fly.p, scale: 1 + (scale - 1) * fly.p, transformOrigin: "50% 50%" });
     };
 
     const tl = gsap.timeline({ onComplete: finish });
@@ -62,8 +68,7 @@ export default function Loader() {
       .fromTo(parts("group"), { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: .4, ease: "power2.inOut", stagger: .04 }, .62)
       .call(handover, [], 1.2)
       .to(wordSet, { y: -24, opacity: 0, duration: .35, ease: "power2.in" }, 1.2)
-      // Function-based values are measured when the tween first renders, so the header is in its final layout.
-      .to(markSet, { x: () => flyTo().x, y: () => flyTo().y, scale: () => flyTo().scale, transformOrigin: "50% 50%", duration: .6, ease: "power3.inOut" }, 1.22)
+      .to(fly, { p: 1, duration: .6, ease: "power3.inOut", onUpdate: land }, 1.22)
       .to(el, { backgroundColor: "rgba(246, 247, 249, 0)", duration: .45, ease: "power2.inOut" }, 1.38)
       .to({}, { duration: .47 }, 1.38);
 
