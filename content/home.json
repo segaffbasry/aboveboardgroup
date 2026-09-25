@@ -1,0 +1,569 @@
+{
+ "source": "https://aboveboardgroup.co.uk",
+ "bundle": "/assets/index-CS9ihNEd.js",
+ "hero": {
+  "src": "/images/hero-install.webp",
+  "width": 1693,
+  "height": 929
+ },
+ "about": {
+  "src": "/images/about-team.webp",
+  "width": 1800,
+  "height": 1800
+ },
+ "team": [
+  {
+   "id": 1,
+   "name": "Taylor Robinson",
+   "role": "Managing Director",
+   "image": {
+    "src": "/images/team-taylor-robinson.webp",
+    "width": 567,
+    "height": 773
+   }
+  },
+  {
+   "id": 2,
+   "name": "Dan Scott",
+   "role": "Head of Labour Services",
+   "image": {
+    "src": "/images/team-dan-scott.webp",
+    "width": 400,
+    "height": 400
+   }
+  },
+  {
+   "id": 3,
+   "name": "Ricardo Luxford",
+   "role": "Head of Projects",
+   "image": {
+    "src": "/images/team-ricardo-luxford.webp",
+    "width": 584,
+    "height": 772
+   }
+  }
+ ],
+ "stats": [
+  {
+   "id": 1,
+   "label": "Projects Completed",
+   "value": 100,
+   "suffix": "+"
+  },
+  {
+   "id": 2,
+   "label": "Pair Days Labour Supplied",
+   "value": 1000,
+   "suffix": "+"
+  },
+  {
+   "id": 3,
+   "label": "Happy Clients",
+   "value": 50,
+   "suffix": "+"
+  }
+ ],
+ "projects": [
+  {
+   "id": 1,
+   "name": "Splashes Leisure Centre",
+   "location": "Rainham",
+   "service": "Mitsubishi Electric / VRV / Split Systems",
+   "description": "Full labour and materials project involving Mitsubishi Electric split systems and water cooled VRV installation — 1 triple split, 2 twin splits, 3 single splits, and a water cooled VRV serving 6 FCUs.",
+   "image": {
+    "src": "/images/project-splashes-leisure-centre.webp",
+    "width": 1200,
+    "height": 731
+   },
+   "tags": [
+    "Mitsubishi Electric",
+    "VRV",
+    "Split Systems"
+   ]
+  },
+  {
+   "id": 7,
+   "name": "Royal College of Obstetricians and Gynaecologists",
+   "location": "London Bridge",
+   "service": "Daikin VRV Reclaim & Replacement",
+   "description": "Daikin VRV reclaim and replacement across 3 floors. Altered systems to provide a condenser per floor and replaced 30+ FCUs to suit the new layout.",
+   "image": {
+    "src": "/images/project-royal-college-of-obstetricians-and-gynaecologists.webp",
+    "width": 900,
+    "height": 600
+   },
+   "tags": [
+    "Daikin VRV",
+    "Reclaim",
+    "Replacement"
+   ]
+  },
+  {
+   "id": 2,
+   "name": "Lidl",
+   "location": "Fulham",
+   "service": "FCU Installation / Retail Fit Out",
+   "description": "Full project involving installation of 23 FCUs within a retail fit out — completed on time and to specification.",
+   "image": {
+    "src": "/images/project-lidl.webp",
+    "width": 1200,
+    "height": 1200
+   },
+   "tags": [
+    "FCU Installation",
+    "Retail Fit Out"
+   ]
+  },
+  {
+   "id": 3,
+   "name": "Lidl",
+   "location": "Hoxton",
+   "service": "FCU Installation / Live Environment",
+   "description": "Full project involving installation of 18 FCUs within a live retail environment — 7 week turnaround.",
+   "image": {
+    "src": "/images/project-lidl.webp",
+    "width": 1200,
+    "height": 1200
+   },
+   "tags": [
+    "FCU Installation",
+    "Live Environment"
+   ]
+  }
+ ],
+ "gallery": [
+  {
+   "id": 1,
+   "alt": "Aboveboard Group site work",
+   "image": {
+    "src": "/images/site-work-01.webp",
+    "width": 386,
+    "height": 510
+   }
+  },
+  {
+   "id": 2,
+   "alt": "Aboveboard Group site work",
+   "image": {
+    "src": "/images/site-work-02.webp",
+    "width": 680,
+    "height": 510
+   }
+  },
+  {
+   "id": 3,
+   "alt": "Aboveboard Group site work",
+   "image": {
+    "src": "/images/site-work-03.webp",
+    "width": 382,
+    "height": 510
+   }
+  },
+  {
+   "id": 4,
+   "alt": "Aboveboard Group site work",
+   "image": {
+    "src": "/images/site-work-04.webp",
+    "width": 382,
+    "height": 510
+   }
+  },
+  {
+   "id": 5,
+   "alt": "Aboveboard Group site work",
+   "image": {
+    "src": "/images/site-work-05.webp",
+    "width": 386,
+    "height": 510
+   }
+  },
+  {
+   "id": 6,
+   "alt": "Aboveboard Group site work",
+   "image": {
+    "src": "/images/site-work-06.webp",
+    "width": 382,
+    "height": 510
+   }
+  },
+  {
+   "id": 7,
+   "alt": "Aboveboard Group site work",
+   "image": {
+    "src": "/images/site-work-07.webp",
+    "width": 680,
+    "height": 510
+   }
+  },
+  {
+   "id": 8,
+   "alt": "Aboveboard Group site work",
+   "image": {
+    "src": "/images/site-work-08.webp",
+    "width": 680,
+    "height": 510
+   }
+  },
+  {
+   "id": 9,
+   "alt": "Aboveboard Group site work",
+   "image": {
+    "src": "/images/site-work-09.webp",
+    "width": 680,
+    "height": 504
+   }
+  }
+ ],
+ "tips": [
+  {
+   "id": 1,
+   "icon": "ri-lightbulb-flash-line",
+   "title": "Clean Filters Every 2 Weeks",
+   "text": "Clogged filters reduce airflow by up to 15% and force your system to work harder. In commercial spaces with heavy foot traffic, clean or replace filters every 2 weeks during peak summer use.",
+   "link": "/blog/air-conditioning-maintenance-what-facilities-managers-need-to-know"
+  },
+  {
+   "id": 2,
+   "icon": "ri-thermometer-line",
+   "title": "Set It to 24°C for Efficiency",
+   "text": "Every degree below 24°C can increase energy consumption by 6–8%. For commercial buildings, 24°C is the sweet spot for comfort and cost savings. Avoid setting thermostats below 21°C.",
+   "link": "/blog/smart-building-controls-reducing-energy-costs-with-bms"
+  },
+  {
+   "id": 3,
+   "icon": "ri-door-open-line",
+   "title": "Keep External Doors Closed",
+   "text": "Open doors and windows let hot air in and cold air out, forcing your AC to run constantly. Install air curtains or automatic door closers in high-traffic retail and warehouse entrances.",
+   "link": "/industry/retail-ac-installation"
+  },
+  {
+   "id": 4,
+   "icon": "ri-tools-line",
+   "title": "Annual Servicing Saves Money",
+   "text": "A poorly maintained AC unit can consume 20–30% more energy. Annual professional servicing includes refrigerant checks, coil cleaning, and electrical testing — catching small issues before they become costly repairs.",
+   "link": "/blog/air-conditioning-maintenance-what-facilities-managers-need-to-know"
+  },
+  {
+   "id": 5,
+   "icon": "ri-sun-line",
+   "title": "Shade Your Outdoor Condenser",
+   "text": "Direct sunlight on outdoor condenser units raises operating pressure and reduces efficiency. Install shading or plant greenery (allowing 1m clearance) to improve performance by up to 10%.",
+   "link": "/blog/air-conditioning-maintenance-what-facilities-managers-need-to-know"
+  },
+  {
+   "id": 6,
+   "icon": "ri-windy-line",
+   "title": "Use Ceiling Fans with AC",
+   "text": "Ceiling fans circulate cool air and create a wind-chill effect, allowing you to raise the thermostat by 2–3°C without sacrificing comfort. This combo can cut cooling costs by up to 15%.",
+   "link": "/blog/choosing-the-right-air-conditioning-system-for-commercial-buildings"
+  },
+  {
+   "id": 7,
+   "icon": "ri-time-line",
+   "title": "Program Your Timers Smartly",
+   "text": "Set your BMS or thermostat timer to start cooling 30 minutes before occupancy, not hours earlier. Pre-cooling an empty building wastes energy. Use setback temperatures of 26–28°C when the building is unoccupied.",
+   "link": "/blog/smart-building-controls-reducing-energy-costs-with-bms"
+  },
+  {
+   "id": 8,
+   "icon": "ri-eye-line",
+   "title": "Check for Refrigerant Leaks Early",
+   "text": "Low refrigerant is the most common cause of poor cooling. If your system is blowing warm air, ice is forming on coils, or energy bills are spiking, you likely have a leak. Early detection saves compressor damage.",
+   "link": "/blog/understanding-f-gas-regulations-for-commercial-ac"
+  },
+  {
+   "id": 9,
+   "icon": "ri-home-smile-line",
+   "title": "Seal Ductwork Gaps",
+   "text": "Leaky ductwork can lose up to 30% of conditioned air before it reaches the room. Inspect joints, connections, and flexible duct sections annually. Use proper foil tape or mastic sealant for a lasting fix.",
+   "link": "/blog/choosing-the-right-air-conditioning-system-for-commercial-buildings"
+  },
+  {
+   "id": 10,
+   "icon": "ri-shield-check-line",
+   "title": "Ensure F-Gas Compliance",
+   "text": "All commercial AC systems must be maintained by F-Gas certified engineers. Non-compliance can result in fines up to £200,000. Always check engineer certification before allowing any refrigerant work.",
+   "link": "/blog/understanding-f-gas-regulations-for-commercial-ac"
+  },
+  {
+   "id": 11,
+   "icon": "ri-dashboard-line",
+   "title": "Monitor Energy Usage Weekly",
+   "text": "Sudden spikes in energy consumption often signal AC issues — dirty coils, failing motors, or refrigerant leaks. Smart meters and BMS dashboards make it easy to spot problems before they escalate.",
+   "link": "/blog/smart-building-controls-reducing-energy-costs-with-bms"
+  },
+  {
+   "id": 12,
+   "icon": "ri-haze-line",
+   "title": "Clear Coils of Debris",
+   "text": "Outdoor condenser coils clogged with leaves, dust, or rubbish restrict heat transfer. Hose down coils gently every month during high-use periods. Indoor evaporator coils should be cleaned professionally annually.",
+   "link": "/blog/air-conditioning-maintenance-what-facilities-managers-need-to-know"
+  },
+  {
+   "id": 13,
+   "icon": "ri-building-line",
+   "title": "Match AC Capacity to Space",
+   "text": "An oversized system short-cycles, wasting energy and failing to dehumidify properly. An undersized system runs continuously and never reaches set temperature. Always get a professional heat-load calculation before installation.",
+   "link": "/blog/choosing-the-right-air-conditioning-system-for-commercial-buildings"
+  },
+  {
+   "id": 14,
+   "icon": "ri-zzz-line",
+   "title": "Turn Off AC in Empty Rooms",
+   "text": "In multi-zone buildings, use occupancy sensors or manual controls to shut off cooling in unused meeting rooms, storage areas, or offices after hours. It is one of the easiest ways to reduce waste.",
+   "link": "/blog/smart-building-controls-reducing-energy-costs-with-bms"
+  },
+  {
+   "id": 15,
+   "icon": "ri-calendar-check-line",
+   "title": "Plan Pre-Summer Servicing",
+   "text": "Schedule your commercial AC service in March or April before the summer rush. Engineers get booked up fast, and emergency repairs during heatwaves cost 2–3x more than planned maintenance.",
+   "link": "/blog/why-summer-is-the-worst-time-to-start-your-ac-project"
+  },
+  {
+   "id": 16,
+   "icon": "ri-drop-line",
+   "title": "Check Condensate Drains",
+   "text": "Blocked condensate drains cause water leaks, ceiling damage, and mould growth. Pour a cup of diluted bleach or vinegar down the drain line every 3 months to keep it clear and flowing freely.",
+   "link": "/blog/air-conditioning-maintenance-what-facilities-managers-need-to-know"
+  },
+  {
+   "id": 17,
+   "icon": "ri-sensor-line",
+   "title": "Calibrate Thermostat Sensors",
+   "text": "Thermostats in direct sunlight or near heat sources give false readings and over-cool the building. Calibrate sensors annually and ensure they are positioned away from windows, lamps, and kitchen equipment.",
+   "link": "/blog/smart-building-controls-reducing-energy-costs-with-bms"
+  },
+  {
+   "id": 18,
+   "icon": "ri-team-line",
+   "title": "Train Staff on Basic Controls",
+   "text": "Staff constantly adjusting thermostats can cause temperature swings and energy spikes. Lock programmable controls, provide simple user guides, and designate one person per zone to manage settings.",
+   "link": "/blog/smart-building-controls-reducing-energy-costs-with-bms"
+  },
+  {
+   "id": 19,
+   "icon": "ri-recycle-line",
+   "title": "Recycle Old Refrigerant Properly",
+   "text": "When decommissioning systems, never vent refrigerant into the atmosphere. F-Gas regulations require certified recovery and recycling. Use a registered waste carrier and keep documentation for compliance records.",
+   "link": "/blog/understanding-f-gas-regulations-for-commercial-ac"
+  },
+  {
+   "id": 20,
+   "icon": "ri-bar-chart-grouped-line",
+   "title": "Upgrade Old Systems Over 10 Years",
+   "text": "AC units older than 10 years typically run at 50–60% efficiency compared to modern systems. Upgrading to a new VRF or inverter-driven system can cut energy bills by 30–40% and often pays for itself within 5 years.",
+   "link": "/blog/emergency-ac-repair-vs-replacement-when-to-fix-and-when-to-replace"
+  },
+  {
+   "id": 21,
+   "icon": "ri-map-pin-line",
+   "title": "Allow Clearance Around Units",
+   "text": "Indoor and outdoor units need at least 50cm of clear space around them for airflow. Boxes, furniture, or plants too close restrict circulation and cause overheating. Keep the area clear at all times.",
+   "link": "/blog/choosing-the-right-air-conditioning-system-for-commercial-buildings"
+  },
+  {
+   "id": 22,
+   "icon": "ri-snowflake-line",
+   "title": "Do Not Ignore Ice on Coils",
+   "text": "Ice on evaporator coils is never normal. It means restricted airflow, low refrigerant, or a faulty fan. Turn the system off immediately and call an engineer — running it frozen will damage the compressor.",
+   "link": "/blog/air-conditioning-maintenance-what-facilities-managers-need-to-know"
+  },
+  {
+   "id": 23,
+   "icon": "ri-plug-line",
+   "title": "Inspect Electrical Connections",
+   "text": "Loose terminals, corroded contacts, and worn capacitors are common causes of AC failure. Annual electrical inspection prevents unexpected breakdowns and reduces fire risk in commercial installations.",
+   "link": "/blog/air-conditioning-maintenance-what-facilities-managers-need-to-know"
+  },
+  {
+   "id": 24,
+   "icon": "ri-hospital-line",
+   "title": "Use Higher-Grade Filters in Hospitals",
+   "text": "Standard G4 filters are fine for offices, but hospitals and clean rooms need F7 or HEPA filters to capture bacteria and airborne particles. Match filter grade to your building’s air quality requirements.",
+   "link": "/industry/hospital-hvac"
+  },
+  {
+   "id": 25,
+   "icon": "ri-store-2-line",
+   "title": "Retail AC: Cool Customers, Not Products",
+   "text": "In retail spaces, direct cold airflow onto customers creates discomfort. Use diffusers, adjustable louvres, and zoned controls to maintain a comfortable 23–24°C in browsing areas without chilling stock or staff.",
+   "link": "/industry/retail-ac-installation"
+  },
+  {
+   "id": 26,
+   "icon": "ri-store-3-line",
+   "title": "Zoning Saves Energy in Large Buildings",
+   "text": "VRF and VRV systems let you cool only occupied zones. A large office with 10 meeting rooms does not need all zones running at full capacity. Use occupancy-based zoning to reduce energy by 25–35%.",
+   "link": "/blog/what-is-vrf-and-why-every-contractor-needs-to-know-it"
+  },
+  {
+   "id": 27,
+   "icon": "ri-notification-3-line",
+   "title": "Listen for Unusual Noises",
+   "text": "Grinding, rattling, or hissing sounds from indoor or outdoor units are early warning signs. Address them quickly — a loose fan blade or refrigerant hiss is much cheaper to fix before catastrophic failure.",
+   "link": "/blog/emergency-ac-repair-vs-replacement-when-to-fix-and-when-to-replace"
+  },
+  {
+   "id": 28,
+   "icon": "ri-file-list-3-line",
+   "title": "Keep Service Records on File",
+   "text": "Warranty claims and lease handovers often require proof of maintenance. Keep a log of all service dates, parts replaced, and refrigerant top-ups. It protects your investment and simplifies compliance audits.",
+   "link": "/blog/air-conditioning-maintenance-what-facilities-managers-need-to-know"
+  },
+  {
+   "id": 29,
+   "icon": "ri-global-line",
+   "title": "Consider Heat Pump Technology",
+   "text": "Modern reversible heat pumps provide heating and cooling from one unit. In the UK climate, they are 3–4x more efficient than gas heating and qualify for government incentives. Ask us about heat pump upgrades.",
+   "link": "/blog/heat-pumps-vs-air-conditioning-understanding-the-difference"
+  },
+  {
+   "id": 30,
+   "icon": "ri-award-line",
+   "title": "Only Use Certified Contractors",
+   "text": "Always verify your AC contractor holds F-Gas Category 1 certification and public liability insurance. Cheap, unqualified work voids warranties, risks leaks, and can lead to prosecution under F-Gas regulations.",
+   "link": "/blog/how-to-choose-reliable-ac-labour-for-your-project"
+  }
+ ],
+ "reviews": [
+  {
+   "name": "Adam Scott",
+   "reviewCount": 2,
+   "isLocalGuide": false,
+   "rating": 5,
+   "text": "Worked with Aboveboard group for aircon installation, they have an abundance of work available and make it a very smooth process throughout. Would recommend this company to any other aircon companies struggling for work.",
+   "timeAgo": "2 months ago",
+   "avatar": "A"
+  },
+  {
+   "name": "Ricardo Luxford",
+   "reviewCount": 2,
+   "isLocalGuide": false,
+   "rating": 5,
+   "text": "I have been at Aboveboard since the beginning. Learnt an awful lot through commercial projects that has been provided to me which has excelled me in the air conditioning industry. Not once have I been paid late and a great company to work with.",
+   "timeAgo": "2 months ago",
+   "avatar": "R"
+  },
+  {
+   "name": "Jayvyn Bidiki",
+   "reviewCount": 4,
+   "isLocalGuide": false,
+   "rating": 5,
+   "text": "Worked with Above Board Mechanical for a while now, great company to work with, they have an abundance of work available, with good communication and reliability. Very positive experience, all funds are handled professionally and always paid on time.",
+   "timeAgo": "2 months ago",
+   "avatar": "J"
+  },
+  {
+   "name": "Hannah Claire",
+   "reviewCount": 216,
+   "isLocalGuide": true,
+   "rating": 5,
+   "text": "Very trustworthy and dependable! Transparent pricing, friendly techs, and excellent communication. We couldn’t be happier.",
+   "timeAgo": "2 months ago",
+   "avatar": "H"
+  },
+  {
+   "name": "Harry Langdown",
+   "reviewCount": 3,
+   "isLocalGuide": false,
+   "rating": 5,
+   "text": "Work always reliable, always good quality jobs, easy travel to jobs, always being paid on time.",
+   "timeAgo": "2 months ago",
+   "avatar": "H"
+  },
+  {
+   "name": "Donat Dauti",
+   "reviewCount": 1,
+   "isLocalGuide": false,
+   "rating": 5,
+   "text": "",
+   "timeAgo": "a year ago",
+   "avatar": "D"
+  }
+ ],
+ "posts": [
+  {
+   "id": 3,
+   "profileId": "dan",
+   "author": "Dan Scott",
+   "title": "Head of Labour Services | HVAC & Air Conditioning Labour Supply | VRV/VRF Install Specialists | AboveBoard Group",
+   "location": "United Kingdom",
+   "time": "2w",
+   "text": "A client rang me Friday afternoon.\n\nNeeded engineers for Monday.\n\nIt was the 5th time in less than 3 months.  5th time I delivered.\n\nDifferent engineer pairs every single time.\n\nThat’s what we do.\n\nBut here’s the truth. Summer is coming. Labour is tightening.\n\nThe engineers worth having are already being booked up.\n\nThee contractors who plan 3-4 weeks ahead, get the best people.\n\nThe ones who call Friday?\n\nThey get what’s left.\n\nWhich contractor do you want to be?\n\n#HVAC #AirConditioning #ConstructionUK #BuildingServices",
+   "likes": 8,
+   "comments": 4,
+   "shares": 0,
+   "edited": false,
+   "isRepost": false
+  },
+  {
+   "id": 4,
+   "profileId": "dan",
+   "author": "Dan Scott",
+   "title": "Head of Labour Services | HVAC & Air Conditioning Labour Supply | VRV/VRF Install Specialists | AboveBoard Group",
+   "location": "United Kingdom",
+   "time": "3w",
+   "text": "First full month. With a new client. \n\n5 engineers placed.\n\n20+ days each on site.\n\nNo dramas. No drop-outs. No chasing.\n\nEvery one of them has turned up consistently got on with it, and delivered.\n\nThat’s what we built Aboveboard Group for.\nNot just to find engineers, to find the right ones.\n\nIf you’ve got projects coming up and need reliable people on site, drop me a message.\nHappy to help.\n\nTaylor Robinson Michaela Samet\n\n#HVAC #AirConditioning #BuildingServices #LabourSupply #CommercialHVAC",
+   "likes": 24,
+   "comments": 3,
+   "shares": 0,
+   "edited": true,
+   "isRepost": false
+  },
+  {
+   "id": 6,
+   "profileId": "dan",
+   "author": "Dan Scott",
+   "title": "Head of Labour Services | HVAC & Air Conditioning Labour Supply | VRV/VRF Install Specialists | AboveBoard Group",
+   "location": "United Kingdom",
+   "time": "4w",
+   "text": "We placed an engineer on a job a few weeks back. Did the work, no issues.\n\nA new job came in from a different client. When we got the brief, the engineer they were asking for by name, was already ours.\n\nThey’d crossed paths on site. Liked what they saw. Didn’t even know he came through us.\n\nThat’s what happens when you send out people who are actually good.\n\nIf you need engineers you can put in front of a client without worrying, let’s talk.\n\n#HVAC #HVACRecruitment #LabourHire #Engineers #AboveboardGroup",
+   "likes": 5,
+   "comments": 0,
+   "shares": 1,
+   "edited": true,
+   "isRepost": false
+  },
+  {
+   "id": 8,
+   "profileId": "taylor",
+   "author": "Taylor Robinson",
+   "title": "AC Engineer | Director of Aboveboard | AC Subcontractor & Temp Labour Supply",
+   "location": "Sutton, England, United Kingdom",
+   "time": "3d",
+   "text": "This week we’ve started on a new price work job for a client that originally came through Michaela Samet and our day rate side.\n\nNot the first client to use both services, but the first to come through the agency side and move into price.\n\nAboveboard started as an AC subcontractor, and that’s exactly what we’re continuing to build.\n\nWhether it’s day rate engineers or full price work, we’re here to help other air con companies get jobs done properly.\n\nIf you’ve got anything coming up that needs pricing or extra labour, give me a shout.\n\n#AirConditioning #HVAC #MEP #ConstructionUK #Subcontractor",
+   "likes": 17,
+   "comments": 0,
+   "shares": 1,
+   "edited": false,
+   "isRepost": false
+  },
+  {
+   "id": 9,
+   "profileId": "taylor",
+   "author": "Taylor Robinson",
+   "title": "AC Engineer | Director of Aboveboard | AC Subcontractor & Temp Labour Supply",
+   "location": "Sutton, England, United Kingdom",
+   "time": "2w",
+   "text": "100% fill rate.\n\nSince launching Aboveboard On-Demand last year, we’ve seen rapid growth focusing purely on temp AC labour. We’ve now got around 30 engineers out on site, before summer’s even kicked off.\n\nThe WhatsApp group has been key. Started it from scratch, now pushing 950 AC engineers and nearly maxed out.. \n\nNot a single job missed, and a lot of happy clients.\n\nSome have been challenging - Scotland, Germany, but we always get it covered.\n\nDan Scott Michaela Samet",
+   "likes": 10,
+   "comments": 0,
+   "shares": 0,
+   "edited": false,
+   "isRepost": false
+  }
+ ],
+ "avatars": {
+  "dan": {
+   "src": "/images/avatar-dan-scott.webp",
+   "width": 160,
+   "height": 160
+  },
+  "taylor": {
+   "src": "/images/team-taylor-robinson.webp",
+   "width": 567,
+   "height": 773
+  }
+ }
+}
