@@ -172,6 +172,7 @@ html.is-loading .site-header .brand [data-set="mark"], html[data-intro="done"]:n
 .nav a:hover, .nav button:hover, .nav button[aria-expanded="true"] { background-color: color-mix(in srgb, currentColor 8%, transparent); }
 .header-end { display: flex; align-items: center; gap: 12px; }
 .header-call { --b-line: transparent; }
+html[data-htone="navy"] .header-call { --b-bg: var(--white); --b-fg: var(--navy); }
 .menu-toggle { display: none; width: 48px; height: 48px; border-radius: 50%; background: var(--navy); place-content: center; gap: 6px; }
 .menu-toggle span { display: block; width: 18px; height: 2px; background: var(--white); border-radius: 2px; }
 html[data-htone="navy"] .menu-toggle { background: var(--white); }

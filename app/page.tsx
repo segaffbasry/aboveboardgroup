@@ -14,9 +14,10 @@ import Voices from "@/components/home/Voices";
 import Why from "@/components/home/Why";
 import Work from "@/components/home/Work";
 
-// Section order follows the live homepage. Merged: the "Why choose" points into Trust, the three "Commercial AC
-// projects" teasers into Projects (same three jobs), Google reviews and the LinkedIn feed into Voices.
-// Scenes alternate white and the reference's grey, as airmastersolutions.com does.
+// Section order follows the live homepage, with two moves: About comes straight after the services (its counters
+// answer "who are you" early) and the team sits after the site photos. Merged: the "Why choose" points into Trust,
+// the three "Commercial AC projects" teasers into Projects (same three jobs), the tip of the day into Process, Google
+// reviews and the LinkedIn feed into Voices. Scenes alternate white and the reference's grey, as airmastersolutions.com does.
 export default function Home() {
   return <>
     <Loader />
