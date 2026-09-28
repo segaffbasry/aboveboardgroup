@@ -7,6 +7,7 @@ import { Button, Photo, reducedMotion } from "@/components/ui";
 import { RISE, appear, reveal } from "@/lib/ease";
 import { data, hero, trust } from "@/lib/home-content";
 import { splitMask } from "@/lib/split";
+import QuickQuote from "./QuickQuote";
 
 /* One full screen (100svh), split in two. Left: the live hero's eyebrow, headline, line and CTAs, plus three of
    the site's own trust claims. Right: the live hero photograph in the reference's rounded frame, with the live
@@ -57,11 +58,7 @@ export default function Hero() {
       </div>
       <div className="hero-frame">
         <Photo src={data.hero.src} width={data.hero.width} height={data.hero.height} alt="Commercial Air Conditioning Installation" priority sizes="(max-width: 960px) 100vw, 55vw" />
-        <div className="hero-quote">
-          <h2>{hero.quote.title}</h2>
-          <p>{hero.quote.text}</p>
-          <Button href="#contact" compact>{hero.quote.cta}</Button>
-        </div>
+        <QuickQuote />
       </div>
     </div>
   </section>;

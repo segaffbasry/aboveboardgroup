@@ -1,8 +1,8 @@
 import { Check, Label } from "@/components/ui";
 import { trust } from "@/lib/home-content";
 
-/* "Why Businesses Trust Aboveboard Group" with the live "Why Choose Aboveboard Group?" points folded in: four
-   accreditation cards, the six certification badges as a ruled strip, then the eight reasons in two columns. */
+/* "Why Businesses Trust Aboveboard Group": four accreditation cards and the six certification badges as a ruled
+   strip. The live "Why Choose Aboveboard Group?" points repeat the Why and Trust sections, so they are left out. */
 export default function Trust() {
   return <section className="section trust" data-tone="white" id="trust" aria-labelledby="trust-title" data-soft>
     <div className="wrap">
@@ -18,15 +18,6 @@ export default function Trust() {
         </li>)}
       </ul>
       <ul className="badges" aria-label="Certifications" data-appear>{trust.badges.map((badge) => <li key={badge}><Check />{badge}</li>)}</ul>
-      <div className="choose">
-        <h3 className="sub-title" data-rise>{trust.choose.title}</h3>
-        <ul className="choose-grid">
-          {trust.choose.items.map((item) => <li key={item.title} data-appear>
-            <h4>{"href" in item && item.href ? <a href={item.href}>{item.title}</a> : item.title}</h4>
-            <p>{item.text}</p>
-          </li>)}
-        </ul>
-      </div>
     </div>
   </section>;
 }

@@ -65,11 +65,9 @@ export const about = {
     "Whether you need a full project taken on price, temporary labour for ongoing works, or permanent hires to strengthen your team, Aboveboard Group makes it simple.",
     "We operate with one focus, to make sure your project is fully staffed, delivered on time, and completed to the highest standard. That's why contractors across Surrey choose us as their air conditioning contractor for projects ranging from small residential builds to large commercial developments.",
   ],
-  ctas: [{ label: "Meet The Team", href: "#team" }, { label: "View Our Work", href: "#projects" }],
+  ctas: [{ label: "View Our Work", href: "#projects" }],
   photo: 2,
 };
-
-export const team = { label: "Our Leadership", title: "Meet The Team" };
 
 export const why = {
   label: "Why Aboveboard",
@@ -91,7 +89,6 @@ export const why = {
     "Long-standing relationships with repeat contractors and clients",
     "Straightforward communication and transparent pricing",
   ],
-  photo: 7,
 };
 
 export const projects = {
@@ -99,10 +96,16 @@ export const projects = {
   title: "Recent Projects",
   text: "A selection of our commercial air conditioning and labour supply work across the South East.",
   enquire: "Enquire About This",
+  // One row of three: the two Lidl jobs are the same client, so Fulham (23 FCUs) stands for both. The live card shows
+  // the Lidl logo; this shows a UK Lidl store interior instead, from Wikimedia Commons, credited on the card.
+  hide: [3],
+  lidl: {
+    image: { src: "/images/project-lidl-interior.webp", width: 1400, height: 1050 },
+    alt: "Inside a Lidl store",
+    credit: { label: "Photo: Eric Jones, CC BY-SA 2.0", href: "https://commons.wikimedia.org/wiki/File:Interior_view_of_Newcastle_(NI)_brand_new_Lidl_Store_-_geograph.org.uk_-_8190299.jpg" },
+  },
   all: { label: "View Commercial AC Projects", href: url("/portfolio") },
 };
-
-export const gallery = { label: "On The Job", title: "Latest Work" };
 
 export const commercial = {
   label: "Commercial Air Conditioning",
@@ -172,19 +175,7 @@ export const trust = {
     { title: "Vetted Engineers Only", text: "We deploy engineers we have personally vetted and know, rather than unknown freelancers from a generalist agency." },
   ],
   badges: ["F-Gas Category 1", "CSCS Gold Card", "CHAS Accredited", "IPAF Licensed", "PASMA Certified", "DBS Checked"],
-  choose: {
-    title: "Why Choose Aboveboard Group?",
-    items: [
-      { title: "Sutton-Based Commercial AC Company", text: "We are a Surrey-based contractor with local knowledge of the building stock, access constraints and planning requirements across the region." },
-      { title: "F-Gas Certified Engineers", text: "Our engineers hold current F-Gas certification and work in compliance with F-Gas regulations and Building Regulations Part L." },
-      { title: "Commercial Installation Experience", text: "We have delivered commercial AC projects across offices, retail, healthcare, education, hospitality and industrial environments." },
-      { title: "Project & Labour Support", text: "We provide installation packages, day-rate labour and commissioning support to main contractors and M&E teams." },
-      { title: "London & Surrey Coverage", text: "Our Sutton base gives us efficient access to South London, Greater London and Surrey commercial centres." },
-      { title: "RAMS & Project Documentation", text: "We provide RAMS, method statements and commissioning documentation to main contractor standards." },
-      { title: "Commercial Maintenance Support", text: "Planned maintenance programmes help keep systems efficient, compliant and reliable year-round." },
-      { title: "Genuine Completed Projects", text: "Browse our portfolio to see completed commercial AC work across the South East.", href: url("/portfolio") },
-    ],
-  },
+
 };
 
 export const reviews = {
@@ -192,14 +183,6 @@ export const reviews = {
   rating: "5.0",
   basis: "Based on 6 Google reviews",
   all: { label: "View all reviews on Google", href: "https://www.google.com/maps?sca_esv=fca2f2dc8033dce8&output=search&q=above+board+group&source=lnms&entry=mc&ved=1t:200715&ictx=111" },
-};
-
-export const linkedin = {
-  label: "Latest Updates",
-  title: "LinkedIn Updates",
-  company: "Aboveboard Group",
-  href: "https://uk.linkedin.com/company/aboveboardgroup",
-  cta: "View on LinkedIn",
 };
 
 export const faq = {

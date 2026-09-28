@@ -3,10 +3,11 @@
 import { useState } from "react";
 import { Arrow, Label, More } from "@/components/ui";
 import { commercial, coverage, guides } from "@/lib/home-content";
+import CoverageMap from "./CoverageMap";
 
 /* The live homepage's long "Commercial Air Conditioning" block, kept whole but made browsable:
    the intro, then systems and sectors as two tabs of linked rows (both lists stay in the HTML for no-JS and search),
-   the coverage areas as chips grouped by county, and the four featured guides as cards. */
+   the coverage areas as a heatmap around the Sutton HQ (CoverageMap.tsx), and the four featured guides as cards. */
 export default function Commercial() {
   const lists = [commercial.systems, commercial.clients];
   const [tab, setTab] = useState(0);
@@ -36,12 +37,7 @@ export default function Commercial() {
           <p className="section-text" data-words>{coverage.text}</p>
           <div data-appear><More href={coverage.all.href}>{coverage.all.label}</More></div>
         </div>
-        <div className="areas">
-          {coverage.groups.map((group) => <div key={group.name} data-appear>
-            <h4>{group.name}</h4>
-            <ul className="chips">{group.areas.map((area) => <li key={area.href}><a href={area.href}>{area.name}</a></li>)}</ul>
-          </div>)}
-        </div>
+        <CoverageMap />
       </div>
 
       <div className="guides">

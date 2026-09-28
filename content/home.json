@@ -6,43 +6,6 @@
   "width": 1693,
   "height": 929
  },
- "about": {
-  "src": "/images/about-team.webp",
-  "width": 1800,
-  "height": 1800
- },
- "team": [
-  {
-   "id": 1,
-   "name": "Taylor Robinson",
-   "role": "Managing Director",
-   "image": {
-    "src": "/images/team-taylor-robinson.webp",
-    "width": 567,
-    "height": 773
-   }
-  },
-  {
-   "id": 2,
-   "name": "Dan Scott",
-   "role": "Head of Labour Services",
-   "image": {
-    "src": "/images/team-dan-scott.webp",
-    "width": 400,
-    "height": 400
-   }
-  },
-  {
-   "id": 3,
-   "name": "Ricardo Luxford",
-   "role": "Head of Projects",
-   "image": {
-    "src": "/images/team-ricardo-luxford.webp",
-    "width": 584,
-    "height": 772
-   }
-  }
- ],
  "stats": [
   {
    "id": 1,
@@ -481,75 +444,5 @@
    "timeAgo": "a year ago",
    "avatar": "D"
   }
- ],
- "posts": [
-  {
-   "id": 3,
-   "profileId": "dan",
-   "author": "Dan Scott",
-   "title": "Head of Labour Services | HVAC & Air Conditioning Labour Supply | VRV/VRF Install Specialists | AboveBoard Group",
-   "location": "United Kingdom",
-   "time": "2w",
-   "text": "A client rang me Friday afternoon.\n\nNeeded engineers for Monday.\n\nIt was the 5th time in less than 3 months.  5th time I delivered.\n\nDifferent engineer pairs every single time.\n\nThat’s what we do.\n\nBut here’s the truth. Summer is coming. Labour is tightening.\n\nThe engineers worth having are already being booked up.\n\nThee contractors who plan 3-4 weeks ahead, get the best people.\n\nThe ones who call Friday?\n\nThey get what’s left.\n\nWhich contractor do you want to be?\n\n#HVAC #AirConditioning #ConstructionUK #BuildingServices",
-   "likes": 8,
-   "comments": 4,
-   "shares": 0,
-   "edited": false,
-   "isRepost": false
-  },
-  {
-   "id": 4,
-   "profileId": "dan",
-   "author": "Dan Scott",
-   "title": "Head of Labour Services | HVAC & Air Conditioning Labour Supply | VRV/VRF Install Specialists | AboveBoard Group",
-   "location": "United Kingdom",
-   "time": "3w",
-   "text": "First full month. With a new client. \n\n5 engineers placed.\n\n20+ days each on site.\n\nNo dramas. No drop-outs. No chasing.\n\nEvery one of them has turned up consistently got on with it, and delivered.\n\nThat’s what we built Aboveboard Group for.\nNot just to find engineers, to find the right ones.\n\nIf you’ve got projects coming up and need reliable people on site, drop me a message.\nHappy to help.\n\nTaylor Robinson Michaela Samet\n\n#HVAC #AirConditioning #BuildingServices #LabourSupply #CommercialHVAC",
-   "likes": 24,
-   "comments": 3,
-   "shares": 0,
-   "edited": true,
-   "isRepost": false
-  },
-  {
-   "id": 8,
-   "profileId": "taylor",
-   "author": "Taylor Robinson",
-   "title": "AC Engineer | Director of Aboveboard | AC Subcontractor & Temp Labour Supply",
-   "location": "Sutton, England, United Kingdom",
-   "time": "3d",
-   "text": "This week we’ve started on a new price work job for a client that originally came through Michaela Samet and our day rate side.\n\nNot the first client to use both services, but the first to come through the agency side and move into price.\n\nAboveboard started as an AC subcontractor, and that’s exactly what we’re continuing to build.\n\nWhether it’s day rate engineers or full price work, we’re here to help other air con companies get jobs done properly.\n\nIf you’ve got anything coming up that needs pricing or extra labour, give me a shout.\n\n#AirConditioning #HVAC #MEP #ConstructionUK #Subcontractor",
-   "likes": 17,
-   "comments": 0,
-   "shares": 1,
-   "edited": false,
-   "isRepost": false
-  },
-  {
-   "id": 9,
-   "profileId": "taylor",
-   "author": "Taylor Robinson",
-   "title": "AC Engineer | Director of Aboveboard | AC Subcontractor & Temp Labour Supply",
-   "location": "Sutton, England, United Kingdom",
-   "time": "2w",
-   "text": "100% fill rate.\n\nSince launching Aboveboard On-Demand last year, we’ve seen rapid growth focusing purely on temp AC labour. We’ve now got around 30 engineers out on site, before summer’s even kicked off.\n\nThe WhatsApp group has been key. Started it from scratch, now pushing 950 AC engineers and nearly maxed out.. \n\nNot a single job missed, and a lot of happy clients.\n\nSome have been challenging - Scotland, Germany, but we always get it covered.\n\nDan Scott Michaela Samet",
-   "likes": 10,
-   "comments": 0,
-   "shares": 0,
-   "edited": false,
-   "isRepost": false
-  }
- ],
- "avatars": {
-  "dan": {
-   "src": "/images/avatar-dan-scott.webp",
-   "width": 160,
-   "height": 160
-  },
-  "taylor": {
-   "src": "/images/team-taylor-robinson.webp",
-   "width": 567,
-   "height": 773
-  }
- }
+ ]
 }

@@ -38,7 +38,6 @@ export default function About() {
         {about.paragraphs.map((text) => <p className="section-text" key={text.slice(0, 20)} data-words>{text}</p>)}
         <div className="button-row" data-appear>
           <Button href={about.ctas[0].href}>{about.ctas[0].label}</Button>
-          <Button href={about.ctas[1].href} variant="line">{about.ctas[1].label}</Button>
         </div>
         <ul className="stats" ref={stats}>
           {data.stats.map((stat) => <li key={stat.id} data-appear>

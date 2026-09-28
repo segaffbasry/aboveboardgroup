@@ -1,6 +1,6 @@
 # Aboveboard Group homepage
 
-A private redesign demo of the aboveboardgroup.co.uk homepage, built as a single route. The page is light: the reference's cool grey (`#F6F7F9`) alternates with white, and navy appears only twice, as the enquiry card and the footer card. Look and motion both come from one reference, airmastersolutions.com (a Framer site): its framed hero, rounded white and grey cards, "— EYEBROW" labels, pill buttons with an arrow disc, ticker bar and dark footer card, and its reveal spring. Everything visual that is brand (logo, fonts, colours, copy, photos) is Aboveboard's own.
+A private redesign demo of the aboveboardgroup.co.uk homepage, built as a single route. The page is light: the reference's cool grey (`#F6F7F9`) alternates with white, and navy appears three times: the Why card, the enquiry card and the footer card. Look and motion both come from one reference, airmastersolutions.com (a Framer site): its framed hero, rounded white and grey cards, "— EYEBROW" labels, pill buttons with an arrow disc, ticker bar and dark footer card, and its reveal spring. Everything visual that is brand (logo, fonts, colours, copy, photos) is Aboveboard's own.
 
 ## Run locally
 
@@ -47,39 +47,47 @@ A private redesign demo of the aboveboardgroup.co.uk homepage, built as a single
 | --- | --- | --- | --- |
 | 0 | Ticker | The announcement strip, both wordings | navy strip |
 | 1 | Preloader | The official logo, traced to vectors | base |
-| 2 | Hero | Eyebrow, headline, line, both CTAs, the quick-quote panel, hero photo, 3 accreditations from the trust cards | base |
+| 2 | Hero | Eyebrow, headline, line, both CTAs, the quick-quote form (open in the photo frame), hero photo, 3 accreditations | base |
 | 3 | Services | "What Do You Need?", 4 cards | white |
-| 4 | About | "Built By Engineers, For Engineers", both CTAs, the 3 counters | base |
-| 5 | Process | "How It Works", 4 steps, CTA, plus the Tip of the Day card | white |
-| 6 | Projects | "Recent Projects", 4 projects, "View Commercial AC Projects" | base |
-| 7 | Why | "Built On Site, Not In An Office", 10 points, CTA | white |
-| 8 | Latest Work | 9 site photos in a side-scrolling rail | base |
-| 9 | Team | "Meet The Team", 3 leaders | white |
-| 10 | Commercial | Intro, systems and client types (as two tabs), coverage areas, 4 guides | base |
-| 11 | Trust | 4 cards, 6 badges, the 8 "Why Choose Aboveboard Group?" points | white |
-| 12 | Voices | Google reviews (5 written + score), 4 LinkedIn posts | base |
-| 13 | FAQ | 10 questions | white |
-| 14 | Contact | "Need AC Labour or Project Support?", phone, email, office, quick-quote card | base + navy card |
-| 15 | Footer | Service blurbs, tagline, quick links, address, socials, legal, keyword line | navy card |
+| 4 | About | "Built By Engineers, For Engineers", "View Our Work", the 3 counters | base |
+| 5 | Process | "How It Works", 4 steps, CTA, then the Tip of the Day tile | white |
+| 6 | Projects | "Recent Projects": Splashes, the Royal College, Lidl Fulham, in one row | base |
+| 7 | Why | "Built On Site, Not In An Office" as a navy card beside the 10 points as tiles | white |
+| 8 | Commercial | Intro, systems and client types (two tabs), the coverage heatmap, 4 guides | base |
+| 9 | Trust | 4 cards, 6 badges | white |
+| 10 | Reviews | Google score panel and the 5 written reviews | base |
+| 11 | FAQ | 10 questions | white |
+| 12 | Contact | "Need AC Labour or Project Support?", phone, email, office, quick-quote card | base + navy card |
+| 13 | Footer | Service blurbs, tagline, quick links, address, socials, legal, keyword line | navy card |
 
-Merged: the three "Commercial AC projects" teasers are the same jobs as Recent Projects, so only the link survives; the "Why Choose" points join the trust section; the tip joins the process. Copy is verbatim, including its capitalisation.
+Merged: the three "Commercial AC projects" teasers are the same jobs as Recent Projects, so only the link survives. Copy is verbatim, including its capitalisation.
+
+### Client feedback, 28 September 2026
+
+- **Header**: "theirs is more modern". It is now a floating frosted pill bar, inset like the reference's frame, with the nav grouped in the middle.
+- **Quick quote**: "having it in the box means more clicks". The live form (Your Name, Phone Number *, Email Address, Brief Message) is now open in the hero frame.
+- **Tip of the day**: "too cramped, the tip should be below, more visual". It sits under the steps as its own tile: an orange calendar leaf with today's date and a 30-dot track of the rotation.
+- **Why section**: "their images aren't the best". The ladder photo is gone; the story is a navy card and the 10 points are numbered tiles.
+- **Projects**: "one line with three blocks rather than 4", with a Lidl store interior instead of the logo. Lidl Hoxton is dropped (same client as Fulham).
+- **Coverage**: "maybe this could be a heatmap?". It is now a heatmap (see How it works).
+- **Removed**: the LinkedIn feed ("remove socials"), Meet the Team and its About button, the Latest Work photo rail, and the "Why Choose Aboveboard Group?" points, which repeated Why and Trust ("too much on their homepage", "repetitive").
+- **Testimonials**: Google reviews are one section on their own.
+- Services were approved unchanged.
 
 ## Content
 
 - **Copy** is in `lib/home-content.ts`. **Header, menu and footer** data is in `lib/menu.ts`.
-- **Bundle data** (`content/home.json`, from `scripts/fetch_content.py`): the script fetches the live shell, finds the current bundle, extracts the arrays the homepage renders (team, stats, projects, gallery, 30 tips, reviews, LinkedIn posts), converts them to JSON and downloads every photo as WebP.
-  - LinkedIn: four posts about the work, two per director. Personal posts, reposts of other companies' job ads and posts containing personal mobile numbers are left out. Relative dates ("3w") and reaction counts are dropped because a snapshot makes them wrong.
+- **Bundle data** (`content/home.json`, from `scripts/fetch_content.py`): the script fetches the live shell, finds the current bundle, extracts the arrays the homepage renders (stats, projects, gallery, 30 tips, reviews), converts them to JSON and downloads every photo as WebP.
   - Reviews: the five with text. The reviewer names, counts and "Local Guide" flag are as published.
 - **Links**: `scripts/check_links.py` reads the built HTML plus the menu data (only the open tab renders) and checks all of them.
   - 40 links to aboveboardgroup.co.uk: all in its sitemap, except `/register` and `/login`, whose page chunks (`RegisterPage-*.js`, `LoginPage-*.js`) are in the live bundle and which the live Tenders page links to.
-  - 5 external links (eco-fix.uk, WhatsApp group, LinkedIn, Google Maps reviews, Google profile): all 200.
-  - In-page anchors: `#top`, `#main`, `#contact`, `#projects`, `#team`, each checked against an id on the page. No `#` placeholders.
+  - External links (eco-fix.uk, WhatsApp group, LinkedIn, Google Maps reviews, Google profile, the Wikimedia file page): all 200.
+  - In-page anchors: `#top`, `#main`, `#contact`, `#projects`, each checked against an id on the page. No `#` placeholders.
 - **Images** (`public/images/`, WebP, nothing hotlinked), all from the live homepage's own storage (`storage.readdy-site.link`, `static.readdy.ai`):
   - `hero-install.webp`: the live hero photo.
-  - `site-work-01…09.webp`: the Latest Work photos. They also illustrate the service cards, About and Why, because those sections have no images of their own on the live page.
-  - `project-*.webp`: the portfolio images. Lidl's is its logo, so it is shown whole (`contain`) on white.
-  - `team-*.webp`, `avatar-dan-scott.webp`: portraits. Taylor Robinson's LinkedIn avatar is his team photo (the live feed shows an initial).
-  - `about-team.webp` is downloaded but not shown: it is the full logo on black, the source of the trace.
+  - `site-work-*.webp`: the live Latest Work photos. Four illustrate the service cards and one the About card.
+  - `project-*.webp`: the portfolio images. `project-lidl.webp` (the Lidl logo) is kept but not shown.
+  - `project-lidl-interior.webp` is the one image not from the company: a UK Lidl store interior requested by the client, "Interior view of Newcastle (NI) brand new Lidl Store" by Eric Jones, CC BY-SA 2.0, from Wikimedia Commons (geograph.org.uk 8190299). The licence asks for credit, so the card carries a link to the file page.
 - **Icons**: Simple Icons paths for LinkedIn, Google and WhatsApp (`lib/brand-icons.ts`).
 
 ## Brand
@@ -138,12 +146,16 @@ Tokens measured on airmastersolutions.com (its `<script type="framer/appear">` c
 ### Other systems
 
 - **Smooth scroll**: Lenis on the GSAP ticker, synced with ScrollTrigger. In-page anchors go through Lenis. The menu and the preloader stop it.
-- **Scenes and header**: the reference uses hard section fills (grey `#F6F7F9` / white), so sections declare `data-tone` (`base`, `white`, `navy`). The section under the header sets `html[data-htone]`; the header's text, wordmark, menu button and Call Now pill recolour to match. The header has no bar, hides on scroll down and returns on scroll up or focus.
+- **Header**: a floating frosted pill bar, inset 16px like the reference's hero frame. The nav sits in its own soft pill in the middle; the hovered item lifts to the bar colour. The glass follows the scene tone (white glass on light scenes, navy glass over navy).
+- **Scenes and header colour**: the reference uses hard section fills (grey `#F6F7F9` / white), so sections declare `data-tone` (`base`, `white`, `navy`). The section under the header sets `html[data-htone]`; the header's text, wordmark, menu button and Call Now pill recolour to match. The header has no bar, hides on scroll down and returns on scroll up or focus.
 - **Ticker**: the reference's masked marquee (`.strip`), carrying the live strip text; CSS animation, paused on hover and focus, off with reduced motion.
 - **Menu** (`components/chrome.tsx`): Industries, Areas Covered and Blog open a full-screen navy sheet on that tab (12 industry pages, 12 areas, 8 guides). The other nav items, Call, **Register to Bid** and **Sign In** are in the sheet too, so they are reachable on phones. The sheet wipes down, the items rise; the timeline reverses faster on close. Focus is trapped, Esc closes, focus returns to the trigger (checked by keyboard).
-- **Hero** (`components/home/Hero.tsx`): 100svh, split 45/55. The photo sits in the reference's frame (16px inset, 24px radius) with the quick-quote panel inside it. Entrance on `intro:done`: the frame rises and unclips, the photo settles from 1.14×, headline words rise from masks, the rest fades in 0.1s apart. It measures exactly 900px at 1440×900; below 960px it stacks.
-- **Tip of the Day**: the live rotation formula, run after mount so a static build still shows today's tip.
-- **Latest Work**: a native horizontally scrolling row (scroll-snap) with prev/next buttons; the page itself never scrolls sideways.
+- **Hero** (`components/home/Hero.tsx`): 100svh, split 45/55. The photo sits in the reference's frame (16px inset, 24px radius) with the live quick-quote form open inside it (`components/home/QuickQuote.tsx`). Entrance on `intro:done`: the frame rises and unclips, the photo settles from 1.14×, headline words rise from masks, the rest fades in 0.1s apart. It measures exactly 900px at 1440×900; below 960px it stacks.
+- **Quick quote**: the live fields and labels, phone required, a 500-character message counter. Sending opens the visitor's email app addressed to Enquiries@aboveboardgroup.co.uk with the details filled in; the demo never posts to the company's systems. Phones show the form under the photo.
+- **Tip of the Day** (`components/home/Process.tsx`): the live rotation formula, run after mount so a static build still shows today's tip. Shown as an orange calendar leaf (weekday, date, month) beside the tip, with a track of 30 dots marking today's tip in the rotation.
+- **Why**: a navy story card beside ten numbered tiles, one per live point.
+- **Coverage heatmap** (`components/home/CoverageMap.tsx`): the 12 areas the live homepage lists, placed at their real coordinates (a true-scale 50 × 42 km box, 1 km = 20 units), each glowing orange; the Sutton HQ glows strongest; dashed rings mark 5, 10 and 15 miles from it. Surrey pins are orange, London pins navy, and each links to its live area page. On phones the pins become dots and the areas are listed as links under the map.
+- **Reviews**: the score panel (5.0, stars, "Based on 6 Google reviews", link) stays in view beside the five written reviews in two columns.
 - **Commercial lists**: the 7 systems and 11 client types are two ARIA tabs (arrow keys switch). The hidden panel stays in the HTML.
 - **FAQ**: native `<details>`, so it works without JS; the height animates on the reveal curve where the browser can animate to `auto`.
 - **Photography**: full colour. Linked photos zoom 5% on hover, on the reveal spring.
@@ -169,7 +181,7 @@ Our box measures 273×56 with the same padding, gap and radius. Variants: `navy`
 
 ### Accessibility and fallbacks
 
-- **Keyboard**: skip link; focus rings in each scene's contrast colour (navy on light, orange on navy); the menu is a real dialog with tabs; the commercial lists are tabs; the photo rail is focusable and scrolls by keyboard.
+- **Keyboard**: skip link; focus rings in each scene's contrast colour (navy on light, orange on navy); the menu is a real dialog with tabs; the commercial lists are tabs; the quick-quote fields have visible labels.
 - **Contrast** (checked): navy on white 15.9:1, on grey 14.8:1; muted text 7.1:1 / 6.6:1; white on navy 15.9:1; muted white on navy 9.2:1; navy on orange 5.4:1.
 - **Reduced motion**: no smooth scroll, loader, reveals or ticker; content is visible without movement; CSS movement (disclosure height, photo zoom, arrow turns) is switched off. Verified by code path; the browser pane used for QA cannot emulate the media query.
 - **No JS**: `<noscript>` CSS hides the loader, stops the ticker and shows every revealed element. The FAQ still opens.
@@ -178,7 +190,7 @@ Our box measures 273×56 with the same padding, gap and radius. Variants: `navy`
 
 - `robots` is `noindex, nofollow` in `app/layout.tsx`. There is no sitemap.
 - PostHog (EU) and the 25/50/75/100 `scroll_depth` events are in `lib/posthog.ts`, injected in the `<head>`. The key can be overridden with `NEXT_PUBLIC_POSTHOG_KEY`. Surveys are disabled and no visible UI is added. The script never gets `id="posthog"`.
-- No form submits anything: enquiry buttons go to the live `/contact` page, which hosts the real form.
+- No form posts anywhere: the hero quick quote opens the visitor's own email app, and the other enquiry buttons go to the live `/contact` page, which hosts the real form.
 
 ## Decisions (the brief left these open)
 
@@ -188,8 +200,8 @@ Our box measures 273×56 with the same padding, gap and radius. Variants: `navy`
 - **Copied interaction**: the reference's primary pill button hover.
 - **Preloader frequency**: every visit.
 - **Offer bar**: the live site has no offer, but it has a real announcement strip (join the engineers' WhatsApp group), so that runs in the reference's ticker, verbatim.
-- **Forms**: the live hero quick-quote form and the full enquiry form are not rebuilt; their headings and copy stay, and their buttons open the live contact page, so a demo never posts to the company's inbox. The service cards' modal enquiries become links to the enquiry section.
+- **Forms**: the hero quick quote is rebuilt (client feedback) and sends through the visitor's email app. The full enquiry form is not rebuilt; its button opens the live contact page. The service cards' modal enquiries become links to the enquiry section.
 - **Header lockup**: mark beside wordmark (the official parts, rearranged) for legibility at header size; the stacked official lockup is used in the preloader and footer.
-- **Section images**: sections without their own imagery use the site's own Latest Work photos; no stock.
-- **LinkedIn**: four posts, two per director (see Content for what was left out and why). Michaela Samet's posts are not shown because they carry her personal mobile number.
+- **Section images**: the service cards and About use the site's own Latest Work photos. The only outside image is the client-requested Lidl interior (credited).
+- **"Remove socials"**: read as the LinkedIn feed section. The small LinkedIn and Google icons in the footer stay.
 - **Favicon**: the traced mark instead of the live 🔥 emoji.

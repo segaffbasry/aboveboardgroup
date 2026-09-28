@@ -2,7 +2,7 @@
 
 The live site is a Readdy (Vite + React) single-page app: the homepage HTML is an empty #root and every piece of
 content is a literal inside the main JS bundle. This script reads that bundle, pulls out the data arrays the
-homepage renders (team, stats, projects, gallery, tips, reviews, LinkedIn posts) into content/home.json, and
+homepage renders (stats, projects, gallery, tips, reviews) into content/home.json, and
 downloads every photograph into public/images/ as WebP.
 
 Kept: only what the homepage displays. Dropped: form endpoints, phone numbers inside personal posts, account data.
@@ -68,18 +68,11 @@ def to_json(src):
     return json.loads(s)
 
 
-team = to_json(array("role:`Managing Director`"))
 stats = to_json(array("label:`Projects Completed`"))
 projects = to_json(array("name:`Splashes Leisure Centre`"))
 gallery = to_json(array("alt:`Aboveboard Group site work`"))
 tips = to_json(array("title:`Consider Heat Pump Technology`"))
 reviews = to_json(array("name:`Hannah Claire`"))
-posts = to_json(array("text:`100% fill rate."))
-
-# The homepage feed: company posts about the work, two from each director. Personal posts, reposts of other
-# companies' hiring ads and posts carrying personal mobile numbers are left out.
-keep = ("100% fill rate", "First full month", "A client rang me Friday", "This week we’ve started")
-posts = [p for p in posts if p["text"].startswith(keep) and not p.get("isRepost")]
 
 os.makedirs(os.path.join(ROOT, "public", "images"), exist_ok=True)
 
@@ -96,25 +89,14 @@ def save(url, name, max_width=1800):
 
 
 slug = lambda s: re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
-for member in team:
-    member["image"] = save(member["image"], f"team-{slug(member['name'])}", 900)
 for project in projects:
     project["image"] = save(project["image"], f"project-{slug(project['name'])}", 1200)
 for n, photo in enumerate(gallery, 1):
     photo["image"] = save(photo.pop("src"), f"site-work-{n:02d}", 1400)
-for post in posts:
-    post.pop("avatar", None)
-    post.pop("imageUrl", None)
 
 hero = save(re.search(r'alt:`Commercial Air Conditioning Installation`[^}]*?src:`([^`]+)`|src:`([^`]+)`[^}]*?alt:`Commercial Air Conditioning Installation`', js).group(0).split("src:`")[1].split("`")[0], "hero-install")
-about = save("https://storage.readdy-site.link/project_files/9435a312-c7db-4fa3-8712-dd64feb0a3c0/f3ca970a-5393-459e-9cc2-7c86cf7a9c2e_aboveboard_group_higher_quality.jpg?v=15d5c10c02ad7d0887a0c7969e722375", "about-team")
-avatars = {
-    "dan": save("https://static.readdy.ai/image/4a891bf01ca77aa59d4e684a3f5f885b/a559cc4448efb3ac49b73a17a5cd6c13.png", "avatar-dan-scott", 160),
-    "taylor": team[0]["image"],
-}
-
-data = {"source": SITE, "bundle": bundle_path, "hero": hero, "about": about, "team": team, "stats": stats,
-        "projects": projects, "gallery": gallery, "tips": tips, "reviews": reviews, "posts": posts, "avatars": avatars}
+data = {"source": SITE, "bundle": bundle_path, "hero": hero, "stats": stats, "projects": projects, "gallery": gallery,
+        "tips": tips, "reviews": reviews}
 os.makedirs(os.path.join(ROOT, "content"), exist_ok=True)
 json.dump(data, open(os.path.join(ROOT, "content", "home.json"), "w"), indent=1, ensure_ascii=False)
 print({k: len(v) for k, v in data.items() if isinstance(v, list)})
