@@ -47,7 +47,7 @@ A private redesign demo of the aboveboardgroup.co.uk homepage, built as a single
 | --- | --- | --- | --- |
 | 0 | Ticker | The announcement strip, both wordings | navy strip |
 | 1 | Preloader | The official logo, traced to vectors | base |
-| 2 | Hero | Eyebrow, headline, line, both CTAs, the quick-quote form (open in the photo frame), hero photo, 3 accreditations | base |
+| 2 | Hero | Headline, line, both CTAs, hero photo with the quick-quote form centred in it | base |
 | 3 | Services | "What Do You Need?", 4 cards | white |
 | 4 | About | "Built By Engineers, For Engineers", "View Our Work", the 3 counters | base |
 | 5 | Process | "How It Works", 4 steps, CTA, then the Tip of the Day tile | white |
@@ -73,6 +73,12 @@ Merged: the three "Commercial AC projects" teasers are the same jobs as Recent P
 - **Removed**: the LinkedIn feed ("remove socials"), Meet the Team and its About button, the Latest Work photo rail, and the "Why Choose Aboveboard Group?" points, which repeated Why and Trust ("too much on their homepage", "repetitive").
 - **Testimonials**: Google reviews are one section on their own.
 - Services were approved unchanged.
+
+### Client feedback, 29 September 2026
+
+- **Hero**: "too much going on". The eyebrow and the accreditation line under the buttons are gone, and the quote card is centred in the photo frame.
+- **Buttons**: "make sure buttons don't work". Every pill button, and the service and project cards (whose action is a pill), look and hover as designed but do nothing when pressed (`useInertButtons` in `components/chrome.tsx`). The quick-quote form fills in but sends nothing. Text links, the nav and the menu still work.
+- **Coverage**: "there is no map here?". The heatmap now sits on a real base map (see How it works).
 
 ## Content
 
@@ -151,10 +157,10 @@ Tokens measured on airmastersolutions.com (its `<script type="framer/appear">` c
 - **Ticker**: the reference's masked marquee (`.strip`), carrying the live strip text; CSS animation, paused on hover and focus, off with reduced motion.
 - **Menu** (`components/chrome.tsx`): Industries, Areas Covered and Blog open a full-screen navy sheet on that tab (12 industry pages, 12 areas, 8 guides). The other nav items, Call, **Register to Bid** and **Sign In** are in the sheet too, so they are reachable on phones. The sheet wipes down, the items rise; the timeline reverses faster on close. Focus is trapped, Esc closes, focus returns to the trigger (checked by keyboard).
 - **Hero** (`components/home/Hero.tsx`): 100svh, split 45/55. The photo sits in the reference's frame (16px inset, 24px radius) with the live quick-quote form open inside it (`components/home/QuickQuote.tsx`). Entrance on `intro:done`: the frame rises and unclips, the photo settles from 1.14×, headline words rise from masks, the rest fades in 0.1s apart. It measures exactly 900px at 1440×900; below 960px it stacks.
-- **Quick quote**: the live fields and labels, phone required, a 500-character message counter. Sending opens the visitor's email app addressed to Enquiries@aboveboardgroup.co.uk with the details filled in; the demo never posts to the company's systems. Phones show the form under the photo.
+- **Quick quote**: the live fields and labels, a 500-character message counter, centred in the hero frame. It is inert: "Request a Quote" sends nothing. Phones show the form under the photo.
 - **Tip of the Day** (`components/home/Process.tsx`): the live rotation formula, run after mount so a static build still shows today's tip. Shown as an orange calendar leaf (weekday, date, month) beside the tip, with a track of 30 dots marking today's tip in the rotation.
 - **Why**: a navy story card beside ten numbered tiles, one per live point.
-- **Coverage heatmap** (`components/home/CoverageMap.tsx`): the 12 areas the live homepage lists, placed at their real coordinates (a true-scale 50 × 42 km box, 1 km = 20 units), each glowing orange; the Sutton HQ glows strongest; dashed rings mark 5, 10 and 15 miles from it. Surrey pins are orange, London pins navy, and each links to its live area page. On phones the pins become dots and the areas are listed as links under the map.
+- **Coverage heatmap** (`components/home/CoverageMap.tsx`): a real base map, Esri's label-free World Light Gray Base, stitched once by `scripts/fetch_map.py` into `public/images/coverage-map.webp` (credited on the map: "Esri, HERE, Garmin, © OpenStreetMap contributors"). The 12 areas the live homepage lists are placed on it in Web Mercator at their real coordinates, each glowing orange; the Sutton HQ glows strongest; dashed rings mark 5, 10 and 15 miles from it. Surrey pins are orange, London pins navy, and each links to its live area page. On phones the pins become dots and the areas are listed as links under the map.
 - **Reviews**: the score panel (5.0, stars, "Based on 6 Google reviews", link) stays in view beside the five written reviews in two columns.
 - **Commercial lists**: the 7 systems and 11 client types are two ARIA tabs (arrow keys switch). The hidden panel stays in the HTML.
 - **FAQ**: native `<details>`, so it works without JS; the height animates on the reveal curve where the browser can animate to `auto`.
@@ -190,7 +196,7 @@ Our box measures 273×56 with the same padding, gap and radius. Variants: `navy`
 
 - `robots` is `noindex, nofollow` in `app/layout.tsx`. There is no sitemap.
 - PostHog (EU) and the 25/50/75/100 `scroll_depth` events are in `lib/posthog.ts`, injected in the `<head>`. The key can be overridden with `NEXT_PUBLIC_POSTHOG_KEY`. Surveys are disabled and no visible UI is added. The script never gets `id="posthog"`.
-- No form posts anywhere: the hero quick quote opens the visitor's own email app, and the other enquiry buttons go to the live `/contact` page, which hosts the real form.
+- Nothing can be sent or dialled from the demo: every button is inert and the quick-quote form submits nothing.
 
 ## Decisions (the brief left these open)
 
@@ -200,8 +206,8 @@ Our box measures 273×56 with the same padding, gap and radius. Variants: `navy`
 - **Copied interaction**: the reference's primary pill button hover.
 - **Preloader frequency**: every visit.
 - **Offer bar**: the live site has no offer, but it has a real announcement strip (join the engineers' WhatsApp group), so that runs in the reference's ticker, verbatim.
-- **Forms**: the hero quick quote is rebuilt (client feedback) and sends through the visitor's email app. The full enquiry form is not rebuilt; its button opens the live contact page. The service cards' modal enquiries become links to the enquiry section.
+- **Forms and buttons**: the hero quick quote is rebuilt (client feedback) but sends nothing, and all buttons are inert (client request). The full enquiry form is not rebuilt.
 - **Header lockup**: mark beside wordmark (the official parts, rearranged) for legibility at header size; the stacked official lockup is used in the preloader and footer.
-- **Section images**: the service cards and About use the site's own Latest Work photos. The only outside image is the client-requested Lidl interior (credited).
+- **Section images**: the service cards and About use the site's own Latest Work photos. The outside images are the client-requested Lidl interior and the coverage base map, both credited.
 - **"Remove socials"**: read as the LinkedIn feed section. The small LinkedIn and Google icons in the footer stay.
 - **Favicon**: the traced mark instead of the live 🔥 emoji.

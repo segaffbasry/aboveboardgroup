@@ -173,9 +173,22 @@ function Footer() {
   </footer>;
 }
 
+/* Demo rule (client request, 29 Sept): buttons look and hover as designed but do nothing when pressed. That covers
+   every pill button (.btn) and the cards whose visible action is a pill (services, projects). Text links, the nav
+   and the menu still work. Registered in the capture phase, so it runs before the smooth-scroll anchor handler. */
+const INERT = ".btn, .service-card, .project-card";
+function useInertButtons() {
+  useEffect(() => {
+    const stop = (event: MouseEvent) => { if ((event.target as Element).closest?.(INERT)) event.preventDefault(); };
+    document.addEventListener("click", stop, true);
+    return () => document.removeEventListener("click", stop, true);
+  }, []);
+}
+
 /* Everything around the homepage: header and menu, footer, smooth scroll and reveals. */
 export function Shell({ children }: { children: ReactNode }) {
   usePageMotion();
+  useInertButtons();
   return <>
     <a className="skip-link" href="#main">Skip to content</a>
     <div id="top" />

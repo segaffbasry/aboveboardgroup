@@ -50,6 +50,7 @@ export default function Loader() {
     const land = () => {
       const target = document.querySelector<SVGGElement>('.site-header .brand [data-set="mark"]');
       const unit = svg.getBoundingClientRect().width / svg.viewBox.baseVal.width;
+      if (!(unit > 0)) return; // the loader has no box (hidden), so there is nothing to move
       const box = target?.getBoundingClientRect();
       const to = box && box.width > 0 && from.width > 0 ? box : undefined; // a hidden header or loader has no box to fly to
       const x = to ? (to.left + to.width / 2 - (from.left + from.width / 2)) / unit : 0;

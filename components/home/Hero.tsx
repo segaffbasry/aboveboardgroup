@@ -5,13 +5,13 @@ import { useEffect, useRef } from "react";
 import { registerMotion } from "@/components/motion";
 import { Button, Photo, reducedMotion } from "@/components/ui";
 import { RISE, appear, reveal } from "@/lib/ease";
-import { data, hero, trust } from "@/lib/home-content";
+import { data, hero } from "@/lib/home-content";
 import { splitMask } from "@/lib/split";
 import QuickQuote from "./QuickQuote";
 
-/* One full screen (100svh), split in two. Left: the live hero's eyebrow, headline, line and CTAs, plus three of
-   the site's own trust claims. Right: the live hero photograph in the reference's rounded frame, with the live
-   "Get a Quick Commercial Quote" panel sitting in it. Phones and tablets stack the two.
+/* One full screen (100svh), split in two. Left: the live headline, line and CTAs, nothing else (client feedback:
+   "too much going on"). Right: the live hero photograph in the reference's rounded frame, with the live
+   "Get a Quick Commercial Quote" form open and centred in it (QuickQuote.tsx). Phones and tablets stack the two.
    Its entrance waits for the preloader's intro:done event, so the two overlap into one moment. */
 export default function Hero() {
   const stage = useRef<HTMLElement>(null);
@@ -45,16 +45,12 @@ export default function Hero() {
   return <section className="hero" ref={stage} data-tone="base" aria-labelledby="hero-title">
     <div className="hero-grid">
       <div className="hero-copy">
-        <p className="label" data-hero-appear><span className="label-rule" aria-hidden="true" />{hero.eyebrow}</p>
         <h1 className="hero-title" id="hero-title">{hero.title[0]} <span className="hero-sub">{hero.title[1]}</span></h1>
         <p className="hero-text" data-hero-appear>{hero.text}</p>
         <div className="hero-ctas" data-hero-appear>
           <Button href={hero.call.href}>{hero.call.label}</Button>
           <Button href={hero.contact.href} variant="line">{hero.contact.label}</Button>
         </div>
-        <ul className="hero-proof" data-hero-appear aria-label="Accreditations">
-          {trust.cards.slice(0, 3).map((card) => <li key={card.title}>{card.title}</li>)}
-        </ul>
       </div>
       <div className="hero-frame">
         <Photo src={data.hero.src} width={data.hero.width} height={data.hero.height} alt="Commercial Air Conditioning Installation" priority sizes="(max-width: 960px) 100vw, 55vw" />
